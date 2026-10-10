@@ -31,7 +31,9 @@ public class LibraryService {
 
         return "Member not found";
     }
-
+/**
+ * Demonstrates book issuing and member lookup operations.
+ */
     public static void main(String[] args) {
 
         // Test member lookup
