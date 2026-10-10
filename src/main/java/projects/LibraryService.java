@@ -10,6 +10,14 @@ public class LibraryService {
     public static int issueBook(int availableCopies, String title)
             throws BookUnavailableException {
 
+        // Validate the book title
+        if (title == null || title.trim().isEmpty()) {
+            throw new IllegalArgumentException(
+                "Book title cannot be empty."
+            );
+        }
+
+        // Check book availability
         if (availableCopies <= 0) {
             throw new BookUnavailableException(
                 "'" + title + "' has no copies available."
@@ -31,14 +39,19 @@ public class LibraryService {
 
         return "Member not found";
     }
-/**
- * Demonstrates book issuing and member lookup operations.
- */
+
+    /**
+     * Demonstrates book issuing and member lookup operations.
+     */
     public static void main(String[] args) {
 
-        // Test member lookup
-        System.out.println("Member: " + findMemberById(101));
-        System.out.println("Member: " + findMemberById(102));
+        System.out.println(
+            "Member: " + findMemberById(101)
+        );
+
+        System.out.println(
+            "Member: " + findMemberById(102)
+        );
 
         try {
             System.out.println(
