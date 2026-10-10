@@ -3,10 +3,7 @@ package projects;
 
 public class LibraryService {
 
-    /**
-     * Returns the copy count after issuing one copy of a book.
-     * @throws BookUnavailableException if no copies are available.
-     */
+   // Issues a single copy; throws BookUnavailableException if none left
     public static int issueBook(int availableCopies, String title)
             throws BookUnavailableException {
 
